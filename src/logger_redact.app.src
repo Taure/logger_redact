@@ -1,0 +1,11 @@
+{application, logger_redact, [
+    {description, "Redact PII and secrets from OTP logger events"},
+    {vsn, "git"},
+    {registered, [logger_redact_sup, logger_redact_guard]},
+    {mod, {logger_redact_app, []}},
+    {applications, [kernel, stdlib, crypto]},
+    {env, [{install, true}, {policy, #{}}, {guard_interval, 1000}]},
+    {modules, []},
+    {licenses, ["Apache-2.0"]},
+    {links, [{"GitHub", "https://github.com/Taure/logger_redact"}]}
+]}.
